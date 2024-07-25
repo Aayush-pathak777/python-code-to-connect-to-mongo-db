@@ -1,0 +1,14 @@
+pip install pymongo
+import pymongo
+ dbconn = pymongo.MongoClient("mongodb://localhost:27017")
+dbconn.list_database_names()
+ database = dbconn["INIT"]
+dbcollection = database["company"]
+dbcollection.insert_one(
+
+    {
+        "name" : "aayush",
+        "location" : "delhi"
+}
+)
+dbcollection.find_one()
